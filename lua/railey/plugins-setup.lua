@@ -14,7 +14,7 @@ Plug('sonph/onehalf', {rtp = 'vim'})
 Plug 'dense-analysis/ale'
 
 -- COC Intellisense System
-Plug('neoclide/coc.nvim', {branch = 'release'}) 
+Plug('neoclide/coc.nvim', {branch = 'release'})
 
 -- Airline Custom Status Bar
 Plug 'vim-airline/vim-airline'
@@ -32,9 +32,6 @@ Plug 'jiangmiao/auto-pairs'
 
 -- Auto Comment
 Plug 'tpope/vim-commentary'
-
--- Discord Presence
-Plug 'andweeb/presence.nvim'
 
 -- Vim Visual Multi
 Plug('mg979/vim-visual-multi', {branch = 'master'})
