@@ -7,7 +7,7 @@ A personal nvim config files to suit my preference and to easily adjust remote w
 *Note: Make sure you have [NVIM](https://github.com/neovim/neovim/wiki/Installing-Neovim) installed. To check, run `nvim` in your terminal*
 *Note: This is based on a Linux Ubuntu System*
 
-1. Click `Use this template` or clone into a local directory
+1. Clone this repository into a local directory
 ```
 git clone https://github.com/Pilner/Nvim-Pilner
 ```
