@@ -5,6 +5,7 @@ A personal nvim config files to suit my preference and to easily adjust remote w
 ## How to use
 
 *Note: Make sure you have [NVIM](https://github.com/neovim/neovim/wiki/Installing-Neovim) installed. To check, run `nvim` in your terminal*
+*Note: Make sure you also have [vim-plug](https://github.com/junegunn/vim-plug) installed.
 *Note: This is based on a Linux Ubuntu System*
 
 1. Clone this repository into a local directory
@@ -16,7 +17,16 @@ git clone https://github.com/Pilner/Nvim-Pilner
 # pwd contains cloned files/folders
 mv ./* ~/.config/nvim/.
 ```
-3. Now we're done! Run nvim to check
+3. Install all dependencies of vim plugins
+  - Open `plugins-setup.lua` using nvim
+```
+nvim ~/.config/nvim/lua/railey/plugins-setup.lua
+```
+  - And then run this command in normal mode
+```
+:PlugInstall
+```
+4. Now we're done! Run nvim to check
 ```
 nvim
 ```
@@ -35,4 +45,4 @@ nvim
 - [Auto Pair Tags](https://github.com/jiangmiao/auto-pairs)
 - [Auto Comment](https://github.com/tpope/vim-commentary)
 - [Vim Visual Multi](https://github.com/mg979/vim-visual-multi)
-
+- [GitHub Copilot](https://github.com/github/copilot.vim)
