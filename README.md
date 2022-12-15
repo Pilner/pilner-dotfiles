@@ -5,7 +5,7 @@ A personal nvim config files to suit my preference and to easily adjust remote w
 ## How to use
 
 *Note: Make sure you have [NVIM](https://github.com/neovim/neovim/wiki/Installing-Neovim) installed. To check, run `nvim` in your terminal*
-*Note: Make sure you also have [vim-plug](https://github.com/junegunn/vim-plug) installed.
+*Note: Make sure you also have [vim-plug](https://github.com/junegunn/vim-plug) installed.*
 *Note: This is based on a Linux Ubuntu System*
 
 1. Clone this repository into a local directory
