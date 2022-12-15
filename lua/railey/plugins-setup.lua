@@ -1,6 +1,6 @@
 local Plug = vim.fn['plug#']
 
-vim.g.ale_disable_lsp = 1
+vim.g.ale_disable_lsp = 0
 
 vim.call('plug#begin', '~/.config/nvim/lua/railey/plugins')
 
@@ -36,6 +36,9 @@ Plug 'tpope/vim-commentary'
 -- Vim Visual Multi
 Plug('mg979/vim-visual-multi', {branch = 'master'})
 
+-- GitHub Copilot
+Plug 'github/copilot.vim'
+
 vim.call('plug#end')
 
 vim.g.ale_sign_column_always = 1
@@ -44,3 +47,4 @@ vim.g.ale_sign_warning = '?'
 vim.g.ale_sign_info = '?'
 vim.g.ale_set_highlights = 1
 vim.g.coc_disable_startup_warning = 1
+

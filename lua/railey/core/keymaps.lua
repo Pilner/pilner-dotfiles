@@ -18,6 +18,8 @@ keymap.set("n", "<leader>sh", "<C-w>s") -- split window horizontally
 keymap.set("n", "<leader>se", "<C-w>=") -- equal width
 keymap.set("n", "<leader>sx", ":close<cr>") -- close current split windows
 
+keymap.set("n", "<leader>zz", ":w<cr>")
+
 -- NVIM-Tree Toggle
 keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>")
 

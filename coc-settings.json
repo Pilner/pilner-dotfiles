@@ -1,5 +1,8 @@
 {
   // Run prettier (and others)
-  "coc.preferences.formatOnSaveFiletypes": ["*"],
-  "JAVA_HOME": "/usr/lib/jvm/java-17-openjdk-amd64/bin/java"
+  "coc.preferences.formatOnSaveFiletypes": [
+    "*"
+  ],
+  "JAVA_HOME": "/usr/lib/jvm/java-17-openjdk-amd64/bin/java",
+  "snippets.priority": 200
 }

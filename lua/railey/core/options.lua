@@ -33,3 +33,11 @@ opt.splitright = true
 opt.splitbelow = true
 
 opt.hidden = true
+
+-- enable mouse
+vim.cmd [[ set mouse=a ]]
+
+
+-- disable copilot
+vim.g.copilot_enabled = "v:false"
+
