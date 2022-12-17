@@ -13,15 +13,9 @@ Plug('sonph/onehalf', {rtp = 'vim'})
 -- Ale Syntax Checker
 Plug 'dense-analysis/ale'
 
--- COC Intellisense System
-Plug('neoclide/coc.nvim', {branch = 'release'})
-
 -- Airline Custom Status Bar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
--- Emmet for HTML Snippets
-Plug 'mattn/emmet-vim'
 
 -- NVIM-Tree File Explorer
 Plug 'nvim-tree/nvim-web-devicons' -- optional, for file icons
@@ -39,11 +33,23 @@ Plug('mg979/vim-visual-multi', {branch = 'master'})
 -- GitHub Copilot
 Plug 'github/copilot.vim'
 
+-- Tree Sitter
+Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})
+
+-- Vim Fugitive
+Plug 'tpope/vim-fugitive'
+
+-- COC
+  -- COC Intellisense System
+  Plug('neoclide/coc.nvim', {branch = 'release'})
+  -- Emmet for HTML Snippets
+  Plug 'mattn/emmet-vim'
+
 vim.call('plug#end')
 
 vim.g.ale_sign_column_always = 1
 vim.g.ale_sign_error = '⦿'
-vim.g.ale_sign_warning = '?'
+vim.g.ale_sign_warning = '‣'
 vim.g.ale_sign_info = '?'
 vim.g.ale_set_highlights = 1
 vim.g.coc_disable_startup_warning = 1

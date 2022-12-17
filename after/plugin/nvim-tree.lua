@@ -28,3 +28,6 @@ require("nvim-tree").setup({
     dotfiles = true,
   },
 })
+
+-- NVIM-Tree Toggle
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>")

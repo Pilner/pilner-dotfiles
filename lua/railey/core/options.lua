@@ -26,7 +26,7 @@ opt.cursorline = true
 opt.backspace = "indent,eol,start"
 
 -- clipboard
-opt.clipboard:append("unnamedplus")
+--opt.clipboard:append("unnamedplus")
 
 -- split windows
 opt.splitright = true
@@ -41,3 +41,23 @@ vim.cmd [[ set mouse=a ]]
 -- disable copilot
 vim.g.copilot_enabled = "v:false"
 
+vim.cmd[[
+set timeoutlen=1000 ttimeoutlen=0
+]]
+
+vim.cmd [[
+if has('wsl')
+    let g:clipboard = {
+          \   'name': 'wslclipboard',
+          \   'copy': {
+          \      '+': '/usr/local/bin/win32yank.exe -i --crlf',
+          \      '*': '/usr/local/bin/win32yank.exe -i --crlf',
+          \    },
+          \   'paste': {
+          \      '+': '/usr/local/bin/win32yank.exe -o --lf',
+          \      '*': '/usr/local/bin/win32yank.exe -o --lf',
+          \   },
+          \   'cache_enabled': 1,
+          \ }
+endif
+]]

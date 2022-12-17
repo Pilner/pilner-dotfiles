@@ -48,3 +48,5 @@ nvim
 - [Auto Comment](https://github.com/tpope/vim-commentary)
 - [Vim Visual Multi](https://github.com/mg979/vim-visual-multi)
 - [GitHub Copilot](https://github.com/github/copilot.vim)
+- [Tree Sitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [Vim Fugitive](https://github.com/tpope/vim-fugitive)
