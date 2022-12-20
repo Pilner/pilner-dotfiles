@@ -1,6 +1,5 @@
 local Plug = vim.fn['plug#']
 
-vim.g.ale_disable_lsp = 0
 
 vim.call('plug#begin', '~/.config/nvim/lua/railey/plugins')
 
@@ -9,9 +8,6 @@ Plug 'tyrannicaltoucan/vim-deep-space'
 
 -- One Half 1/2 Color Scheme
 Plug('sonph/onehalf', {rtp = 'vim'})
-
--- Ale Syntax Checker
-Plug 'dense-analysis/ale'
 
 -- Airline Custom Status Bar
 Plug 'vim-airline/vim-airline'
@@ -46,11 +42,3 @@ Plug 'tpope/vim-fugitive'
   Plug 'mattn/emmet-vim'
 
 vim.call('plug#end')
-
-vim.g.ale_sign_column_always = 1
-vim.g.ale_sign_error = '⦿'
-vim.g.ale_sign_warning = '‣'
-vim.g.ale_sign_info = '?'
-vim.g.ale_set_highlights = 1
-vim.g.coc_disable_startup_warning = 1
-

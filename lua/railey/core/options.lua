@@ -41,9 +41,8 @@ vim.cmd [[ set mouse=a ]]
 -- disable copilot
 vim.g.copilot_enabled = "v:false"
 
-vim.cmd[[
-set timeoutlen=1000 ttimeoutlen=0
-]]
+opt.timeoutlen = 1000
+opt.ttimeoutlen = 0
 
 vim.cmd [[
 if has('wsl')

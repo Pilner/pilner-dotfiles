@@ -3,6 +3,11 @@
   "coc.preferences.formatOnSaveFiletypes": [
     "*"
   ],
-  "JAVA_HOME": "/usr/lib/jvm/java-17-openjdk-amd64/bin/java",
-  "snippets.priority": 200
+  "snippets.priority": 200,
+  "diagnostic.checkCurrentLine": true,
+  "diagnostic.errorSign": "⦿",
+  "diagnostic.warningSign": "‣",
+  "diagnostic.infoSign": "?",
+  "diagnostic.hintSign": ">>",
+  "diagnostic.refreshOnInsertMode": true
 }

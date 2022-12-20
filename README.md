@@ -37,7 +37,6 @@ nvim
 
 - [Deep-Space Color Scheme](https://github.com/tyrannicaltoucan/vim-deep-space)
 - [One Half 1/2 Color Scheme](https://github.com/sonph/onehalf)
-- [Ale Syntax Checker](https://github.com/dense-analysis/ale)
 - [COC Intellisense System](https://github.com/neoclide/coc.nvim)
 - [Airline Custom Status Bar](https://github.com/vim-airline/vim-airline)
   - [Themes](https://github.com/vim-airline/vim-airline-themes)
