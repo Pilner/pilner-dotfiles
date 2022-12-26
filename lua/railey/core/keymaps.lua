@@ -26,6 +26,9 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- Copy to system clipboard
 keymap.set({"n", "v"}, "<leader>y", [["+y]])
 keymap.set("n", "<leader>Y", [["+Y]])
+-- Paste from system clipboard
+keymap.set({"n", "v"}, "<leader>p", [["+p]])
+keymap.set("n", "<leader>P", [["+P]])
 
 -- Use alt + hjkl to resize windows
 keymap.set("n", "<M-h>", ":vertical resize -2<CR>", {})

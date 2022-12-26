@@ -8,7 +8,7 @@ vim.g.loaded_netrwPlugin = 1
 vim.opt.termguicolors = true
 
 -- empty setup using defaults
-require("nvim-tree").setup()
+-- require("nvim-tree").setup()
 
 -- OR setup with some options
 require("nvim-tree").setup({
@@ -27,7 +27,13 @@ require("nvim-tree").setup({
   filters = {
     dotfiles = true,
   },
+  auto_close = true,
+  open_on_tab = true
 })
 
--- NVIM-Tree Toggle
-vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<cr>")
+vim.keymap.set('n', "<leader>e", ":NvimTreeToggle<cr>")
+
+vim.api.nvim_create_autocmd('BufEnter', {
+    command = "if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif",
+    nested = true,
+})

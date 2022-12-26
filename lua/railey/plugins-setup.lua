@@ -9,6 +9,9 @@ Plug 'tyrannicaltoucan/vim-deep-space'
 -- One Half 1/2 Color Scheme
 Plug('sonph/onehalf', {rtp = 'vim'})
 
+-- Code Dark
+Plug('tomasiser/vim-code-dark')
+
 -- Airline Custom Status Bar
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -34,6 +37,15 @@ Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})
 
 -- Vim Fugitive
 Plug 'tpope/vim-fugitive'
+
+-- Single Compile
+Plug 'xuhdev/SingleCompile'
+
+-- Telescope.nvim
+Plug 'nvim-telescope/telescope.nvim'
+
+-- Plenary Dependencies
+Plug 'nvim-lua/plenary.nvim'
 
 -- COC
   -- COC Intellisense System
