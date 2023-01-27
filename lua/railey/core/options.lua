@@ -25,6 +25,11 @@ opt.cursorline = true
 -- backspace
 opt.backspace = "indent,eol,start"
 
+-- linewrap
+opt.wrap = true
+opt.linebreak = true
+opt.list = false
+
 -- clipboard
 --opt.clipboard:append("unnamedplus")
 
@@ -60,3 +65,5 @@ if has('wsl')
           \ }
 endif
 ]]
+
+vim.api.nvim_command("autocmd TermOpen * setlocal nonu nornu")

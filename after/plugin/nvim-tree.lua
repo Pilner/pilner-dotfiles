@@ -28,12 +28,13 @@ require("nvim-tree").setup({
     dotfiles = true,
   },
   auto_close = true,
-  open_on_tab = true
+  open_on_tab = true,
+  sync_root_with_cwd = true -- updates the root directory of the tree on `DirChanged` (when your run `:cd` usually)
 })
 
 vim.keymap.set('n', "<leader>e", ":NvimTreeToggle<cr>")
 
 vim.api.nvim_create_autocmd('BufEnter', {
-    command = "if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif",
-    nested = true,
+   command = "if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif",
+   nested = true,
 })

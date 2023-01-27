@@ -1,4 +1,10 @@
 require'nvim-treesitter.configs'.setup {
+
+  -- Indentation for new lines(?)
+  indent = {
+    enable = true,
+    disable = { 'python', 'c'} -- these and some other langs don't work well
+  },
   -- A list of parser names, or "all"
   ensure_installed = { "c", "lua", "rust" },
 

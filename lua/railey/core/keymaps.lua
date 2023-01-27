@@ -4,7 +4,7 @@ local keymap = vim.keymap
 
 -- Regarding Tabs
 keymap.set("n", "<leader>tn", ":tabnew<cr>")
-keymap.set("n", "<leader>t<leader>", ":tabnext")
+-- keymap.set("n", "<leader>t<leader>", ":tabnext")
 keymap.set("n", "<leader>tm", ":tabmove")
 keymap.set("n", "<leader>tc", ":tabclose<cr>")
 keymap.set("n", "<leader>to", ":tabonly<cr>")
@@ -36,3 +36,8 @@ keymap.set("n", "<M-l>", ":vertical resize +2<CR>", {})
 keymap.set("n", "<M-j>", ":horizontal resize -2<CR>", {})
 keymap.set("n", "<M-k>", ":horizontal resize +2<CR>", {})
 keymap.set("n", "<leader>zz", ":w<cr>")
+
+-- On-Screen Terminal
+-- keymap.set("n", "<leader>t", ":10 split term://bash<CR>a")
+-- keymap.set("t", "<Esc>", "<C-\\><C-n>")
+-- keymap.set("t", "<C-K>", "<C-\\><C-n><C-W>k")

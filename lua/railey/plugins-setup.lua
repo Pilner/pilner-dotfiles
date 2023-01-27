@@ -23,6 +23,9 @@ Plug 'nvim-tree/nvim-tree.lua'
 -- Auto Pair Tags
 Plug 'jiangmiao/auto-pairs'
 
+-- Surround.vim
+Plug 'tpope/vim-surround'
+
 -- Auto Comment
 Plug 'tpope/vim-commentary'
 

@@ -44,6 +44,7 @@ nvim
 - [NVIM-Tree File Explorer](https://github.com/nvim-tree/nvim-web-devicons)
   - [Icons](https://github.com/nvim-tree/nvim-tree.lua)
 - [Auto Pair Tags](https://github.com/jiangmiao/auto-pairs)
+- [Vim Surround](https://github.com/tpope/vim-surround)
 - [Auto Comment](https://github.com/tpope/vim-commentary)
 - [Vim Visual Multi](https://github.com/mg979/vim-visual-multi)
 - [GitHub Copilot](https://github.com/github/copilot.vim)
