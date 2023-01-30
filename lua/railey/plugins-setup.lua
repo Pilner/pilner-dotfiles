@@ -3,14 +3,8 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin', '~/.config/nvim/lua/railey/plugins')
 
--- Deep-Space Color Scheme
-Plug 'tyrannicaltoucan/vim-deep-space'
-
 -- One Half 1/2 Color Scheme
 Plug('sonph/onehalf', {rtp = 'vim'})
-
--- Code Dark
-Plug('tomasiser/vim-code-dark')
 
 -- Airline Custom Status Bar
 Plug 'vim-airline/vim-airline'
@@ -22,6 +16,9 @@ Plug 'nvim-tree/nvim-tree.lua'
 
 -- Auto Pair Tags
 Plug 'jiangmiao/auto-pairs'
+
+-- Undo Tree
+Plug 'mbbill/undotree'
 
 -- Surround.vim
 Plug 'tpope/vim-surround'
