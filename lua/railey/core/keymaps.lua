@@ -2,6 +2,9 @@ vim.g.mapleader = " "
 
 local keymap = vim.keymap
 
+-- Remove space to move forward
+keymap.set("n", "<Space>", "<NOP>", {noremap = true})
+
 -- Regarding Tabs
 keymap.set("n", "<leader>tn", ":tabnew<cr>")
 -- keymap.set("n", "<leader>t<leader>", ":tabnext")

@@ -42,9 +42,12 @@ opt.hidden = true
 -- enable mouse
 vim.cmd [[ set mouse=a ]]
 
+-- Keep Undo Changes
+opt.undofile = true
 
 -- disable copilot
 vim.g.copilot_enabled = "v:false"
+
 
 opt.timeoutlen = 1000
 opt.ttimeoutlen = 0

@@ -9,5 +9,5 @@
   "diagnostic.warningSign": "‣",
   "diagnostic.infoSign": "?",
   "diagnostic.hintSign": ">>",
-  "diagnostic.refreshOnInsertMode": true
+  "diagnostic.refreshOnInsertMode": true,
 }
