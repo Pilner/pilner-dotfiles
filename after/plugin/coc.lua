@@ -12,10 +12,10 @@ vim.opt.signcolumn = "yes"
 
 local keyset = vim.keymap.set
 -- Autocomplete
-function _G.check_back_space()
-    local col = vim.fn.col('.') - 1
-    return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
-end
+-- function _G.check_back_space()
+--     local col = vim.fn.col('.') - 1
+--     return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
+-- end
 
 -- Use Tab for trigger completion with characters ahead and navigate
 -- NOTE: There's always a completion item selected by default, you may want to enable

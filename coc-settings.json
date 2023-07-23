@@ -1,13 +1,11 @@
 {
   // Run prettier (and others)
-  "coc.preferences.formatOnSaveFiletypes": [
-    "*"
-  ],
+  "prettier.enable": true,
   "snippets.priority": 200,
   "diagnostic.checkCurrentLine": true,
   "diagnostic.errorSign": "⦿",
   "diagnostic.warningSign": "‣",
   "diagnostic.infoSign": "?",
   "diagnostic.hintSign": ">>",
-  "diagnostic.refreshOnInsertMode": true,
+  "diagnostic.refreshOnInsertMode": true
 }

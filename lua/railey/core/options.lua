@@ -70,3 +70,7 @@ endif
 ]]
 
 vim.api.nvim_command("autocmd TermOpen * setlocal nonu nornu")
+
+vim.cmd [[autocmd FileType * set formatoptions-=ro]]
+
+

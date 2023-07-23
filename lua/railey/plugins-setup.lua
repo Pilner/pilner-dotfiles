@@ -26,6 +26,9 @@ Plug 'tpope/vim-surround'
 -- Auto Comment
 Plug 'tpope/vim-commentary'
 
+-- Indent Marker
+Plug 'lukas-reineke/indent-blankline.nvim'
+
 -- Vim Visual Multi
 Plug('mg979/vim-visual-multi', {branch = 'master'})
 
