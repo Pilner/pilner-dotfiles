@@ -3,6 +3,9 @@ local Plug = vim.fn['plug#']
 
 vim.call('plug#begin', '~/.config/nvim/lua/railey/plugins')
 
+-- Discord Rich Presence
+Plug 'andweeb/presence.nvim'
+
 -- One Half 1/2 Color Scheme
 Plug('sonph/onehalf', {rtp = 'vim'})
 
@@ -46,6 +49,9 @@ Plug 'xuhdev/SingleCompile'
 
 -- Telescope.nvim
 Plug 'nvim-telescope/telescope.nvim'
+
+-- Autotag
+Plug 'windwp/nvim-ts-autotag'
 
 -- Plenary Dependencies
 Plug 'nvim-lua/plenary.nvim'
