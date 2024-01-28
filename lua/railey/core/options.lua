@@ -30,6 +30,9 @@ opt.wrap = true
 opt.linebreak = true
 opt.list = false
 
+-- word separators
+opt.iskeyword:remove({"-", "_"})
+
 -- clipboard
 --opt.clipboard:append("unnamedplus")
 
