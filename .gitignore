@@ -2,6 +2,9 @@
 *
 
 # Except:
+!.gitignore
+!README.md
+
 !nvim
 !coc
 !nvim/**
