@@ -5,11 +5,11 @@ and to easily adjust remote workspaces
 
 ## How to use
 
-*Note: Make sure you have:*
+*Note: Make sure you have this installed:*
 
 - [vim-plug](https://github.com/junegunn/vim-plug)
 - [NVIM](https://github.com/neovim/neovim/wiki/Installing-Neovim)
-- [NPM](https://www.npmjs.com/package/npm) installed.
+- [NPM](https://www.npmjs.com/package/npm)
 
 *Note: This is based on a Linux Ubuntu System*
 
