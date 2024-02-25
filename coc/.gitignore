@@ -1,8 +1,7 @@
 # Ignore Everything
 *
 
+!.gitignore
+
 # Except:
-!nvim
-!coc
-!nvim/**
-!coc/**
+!/ultisnips**
