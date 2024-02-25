@@ -1,1 +1,6 @@
-lua/railey/plugins/*
+# Ignore Everything
+*
+
+# Except:
+!nvim*
+!co*
