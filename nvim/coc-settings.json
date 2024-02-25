@@ -7,5 +7,6 @@
   "diagnostic.warningSign": "‣",
   "diagnostic.infoSign": "?",
   "diagnostic.hintSign": ">>",
-  "diagnostic.refreshOnInsertMode": true
+  "diagnostic.refreshOnInsertMode": true,
+  "snippets.ultisnips.pythonPrompt": false
 }
