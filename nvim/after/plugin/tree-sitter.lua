@@ -6,7 +6,7 @@ require'nvim-treesitter.configs'.setup {
     disable = { 'python', 'c'} -- these and some other langs don't work well
   },
   -- A list of parser names, or "all"
-  ensure_installed = { "c", "lua", "rust" },
+  ensure_installed = { "c", "lua", "rust", "vim", "bash"},
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
