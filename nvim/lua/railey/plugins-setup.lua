@@ -56,6 +56,9 @@ Plug 'windwp/nvim-ts-autotag'
 -- Plenary Dependencies
 Plug 'nvim-lua/plenary.nvim'
 
+-- Markdown Preview
+Plug('iamcco/markdown-preview.nvim', {['do'] = 'cd app && npx --yes yarn install'})
+
 -- COC
   -- COC Intellisense System
   Plug('neoclide/coc.nvim', {branch = 'release'})

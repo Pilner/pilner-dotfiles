@@ -54,3 +54,4 @@ nvim
 - [Vim Fugitive](https://github.com/tpope/vim-fugitive)
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 - [Plenary Dependencies](https://github.com/nvim-lua/plenary.nvim)
+- [Markdown Preview](https://github.com/iamcco/markdown-preview.nvim)
