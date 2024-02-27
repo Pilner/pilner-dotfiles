@@ -17,5 +17,6 @@
     "coc-python": ">=1.2.13",
     "@yaegassy/coc-tailwindcss3": ">=0.5.5",
     "coc-cmake": ">=0.2.1"
-  }
+  },
+  "lastUpdate": 1709035489895
 }
