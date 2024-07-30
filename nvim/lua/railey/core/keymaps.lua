@@ -40,6 +40,12 @@ keymap.set("n", "<M-j>", ":horizontal resize -2<CR>", {})
 keymap.set("n", "<M-k>", ":horizontal resize +2<CR>", {})
 keymap.set("n", "<leader>zz", ":w<cr>")
 
+-- Move up and down in a "wrapped" line (single line)
+keymap.set("n", "j", "gj", {noremap = true})
+keymap.set("n", "k", "gk", {noremap = true})
+keymap.set("n", "gj", "j", {noremap = true})
+keymap.set("n", "gk", "k", {noremap = true})
+
 -- On-Screen Terminal
 -- keymap.set("n", "<leader>t", ":10 split term://bash<CR>a")
 -- keymap.set("t", "<Esc>", "<C-\\><C-n>")
