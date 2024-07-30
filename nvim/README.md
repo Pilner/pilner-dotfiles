@@ -52,6 +52,7 @@ nvim
 - [GitHub Copilot](https://github.com/github/copilot.vim)
 - [Tree Sitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [Vim Fugitive](https://github.com/tpope/vim-fugitive)
+- [Vim Git Gutter](https://github.com/airblade/vim-gitgutter)
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 - [Plenary Dependencies](https://github.com/nvim-lua/plenary.nvim)
 - [Markdown Preview](https://github.com/iamcco/markdown-preview.nvim)

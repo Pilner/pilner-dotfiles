@@ -44,6 +44,9 @@ Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})
 -- Vim Fugitive
 Plug 'tpope/vim-fugitive'
 
+-- Vim Git Gutter
+Plug 'airblade/vim-gitgutter'
+
 -- Single Compile
 Plug 'xuhdev/SingleCompile'
 
