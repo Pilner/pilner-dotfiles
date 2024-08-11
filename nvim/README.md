@@ -40,7 +40,6 @@ nvim
 - [COC Intellisense System](https://github.com/neoclide/coc.nvim)
 - [Airline Custom Status Bar](https://github.com/vim-airline/vim-airline)
   - [Themes](https://github.com/vim-airline/vim-airline-themes)
-- [Emmet for HTML Snippets](https://github.com/mattn/emmet-vim)
 - [NVIM-Tree File Explorer](https://github.com/nvim-tree/nvim-web-devicons)
   - [Icons](https://github.com/nvim-tree/nvim-tree.lua)
 - [Auto Pair Tags](https://github.com/jiangmiao/auto-pairs)

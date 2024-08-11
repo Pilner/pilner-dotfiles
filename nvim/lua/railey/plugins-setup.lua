@@ -63,9 +63,6 @@ Plug 'nvim-lua/plenary.nvim'
 Plug('iamcco/markdown-preview.nvim', {['do'] = 'cd app && npx --yes yarn install'})
 
 -- COC
-  -- COC Intellisense System
-  Plug('neoclide/coc.nvim', {branch = 'release'})
-  -- Emmet for HTML Snippets
-  Plug 'mattn/emmet-vim'
+Plug('neoclide/coc.nvim', {branch = 'release'})
 
 vim.call('plug#end')
