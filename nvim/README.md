@@ -55,3 +55,5 @@ nvim
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 - [Plenary Dependencies](https://github.com/nvim-lua/plenary.nvim)
 - [Markdown Preview](https://github.com/iamcco/markdown-preview.nvim)
+- [Actually](https://github.com/mong8se/actually.nvim)
+- [Dressing](https://github.com/stevearc/dressing.nvim)

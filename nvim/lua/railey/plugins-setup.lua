@@ -65,4 +65,10 @@ Plug('iamcco/markdown-preview.nvim', {['do'] = 'cd app && npx --yes yarn install
 -- COC
 Plug('neoclide/coc.nvim', {branch = 'release'})
 
+-- Actually.nvim
+Plug 'mong8se/actually.nvim'
+
+-- Dressing.nvim
+Plug 'stevearc/dressing.nvim'
+
 vim.call('plug#end')
