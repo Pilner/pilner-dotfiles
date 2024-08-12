@@ -59,3 +59,4 @@ nvim
 - [Dressing](https://github.com/stevearc/dressing.nvim)
 - [Notify](https://github.com/rcarriga/nvim-notify)
 - [Tip](https://github.com/TobinPalmer/Tip.nvim)
+- [Dashboard](https://github.com/nvimdev/dashboard-nvim)

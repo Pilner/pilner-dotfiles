@@ -74,7 +74,8 @@ Plug 'stevearc/dressing.nvim'
 -- Nvim-Notify
 Plug 'rcarriga/nvim-notify'
 
--- Startup Tips
+-- Startup
 Plug 'TobinPalmer/Tip.nvim'
+Plug 'nvimdev/dashboard-nvim'
 
 vim.call('plug#end')
