@@ -57,3 +57,5 @@ nvim
 - [Markdown Preview](https://github.com/iamcco/markdown-preview.nvim)
 - [Actually](https://github.com/mong8se/actually.nvim)
 - [Dressing](https://github.com/stevearc/dressing.nvim)
+- [Notify](https://github.com/rcarriga/nvim-notify)
+- [Tip](https://github.com/TobinPalmer/Tip.nvim)
