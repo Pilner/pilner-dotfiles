@@ -22,6 +22,7 @@ To check, run `nvim` in your terminal*
 
 - [Auto Pair Tags](https://github.com/jiangmiao/auto-pairs)
 - [COC Intellisense System](https://github.com/neoclide/coc.nvim)
+- [HLSearch](https://github.com/nvimdev/hlsearch.nvim)
 - [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim)
 - [Tree-Sitter Auto Tag](https://github.com/windwp/nvim-ts-autotag)
 - [Vim Surround](https://github.com/tpope/vim-surround)
