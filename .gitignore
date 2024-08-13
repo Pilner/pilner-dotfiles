@@ -6,6 +6,7 @@
 !README.md
 
 !nvim
+!nvim-plug
 !coc
 !nvim/**
 !coc/**
