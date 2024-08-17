@@ -66,7 +66,7 @@ return {
 			},
 			filters = {
 				dotfiles = true,
-
+				git_ignored = false,
 			},
 			open_on_tab = true,
 			sync_root_with_cwd = true -- updates the root directory of the tree on `DirChanged` (when your run `:cd` usually)
