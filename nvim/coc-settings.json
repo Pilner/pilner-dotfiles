@@ -11,4 +11,6 @@
 	"diagnostic.refreshOnInsertMode": true,
 	"snippets.ultisnips.pythonPrompt": false,
 	"vetur.ignoreProjectWarning": true,
+	"python.pythonPath": "/usr/bin/python3",
+	"python.jediEnabled": false
 }
