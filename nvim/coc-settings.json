@@ -1,13 +1,14 @@
 {
-  // Run prettier (and others)
-  "prettier.enable": true,
-  "snippets.priority": 200,
-  "diagnostic.checkCurrentLine": true,
-  "diagnostic.errorSign": "⦿",
-  "diagnostic.warningSign": "‣",
-  "diagnostic.infoSign": "?",
-  "diagnostic.hintSign": ">>",
-  "diagnostic.refreshOnInsertMode": true,
-  "snippets.ultisnips.pythonPrompt": false,
-  "clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/18.1.3/clangd_18.1.3/bin/clangd"
+	// Run prettier (and others)
+	"inlayHint.enable": false,
+	"prettier.enable": true,
+	"snippets.priority": 200,
+	"diagnostic.checkCurrentLine": true,
+	"diagnostic.errorSign": "⦿",
+	"diagnostic.warningSign": "‣",
+	"diagnostic.infoSign": "?",
+	"diagnostic.hintSign": ">>",
+	"diagnostic.refreshOnInsertMode": true,
+	"snippets.ultisnips.pythonPrompt": false,
+	"vetur.ignoreProjectWarning": true,
 }
