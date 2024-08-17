@@ -54,22 +54,18 @@ vim.g.copilot_enabled = "v:false"
 opt.timeoutlen = 1000
 opt.ttimeoutlen = 0
 
-vim.cmd [[
-if has('wsl')
-    let g:clipboard = {
-          \   'name': 'wslclipboard',
-          \   'copy': {
-          \      '+': '/usr/local/bin/win32yank.exe -i --crlf',
-          \      '*': '/usr/local/bin/win32yank.exe -i --crlf',
-          \    },
-          \   'paste': {
-          \      '+': '/usr/local/bin/win32yank.exe -o --lf',
-          \      '*': '/usr/local/bin/win32yank.exe -o --lf',
-          \   },
-          \   'cache_enabled': 1,
-          \ }
-endif
-]]
+vim.g.clipboard = {
+    name = "WslClipboard",
+    copy = {
+	['+'] = "clip.exe",
+	['*'] = "clip.exe",
+    },
+    paste = {
+	['+'] = "powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace('`r', ''))",
+	['*'] = "powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace('`r', ''))",
+    },
+    cache_enabled = 0,
+}
 
 vim.api.nvim_command("autocmd TermOpen * setlocal nonu nornu")
 
