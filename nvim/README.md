@@ -34,6 +34,7 @@ To check, run `nvim` in your terminal*
 - [Dressing](https://github.com/stevearc/dressing.nvim)
 - [Markdown Preview](https://github.com/iamcco/markdown-preview.nvim)
 - [Notify](https://github.com/rcarriga/nvim-notify)
+- [Scrollbar](https://github.com/petertriho/nvim-scrollbar)
 - [NVIM-Tree File Explorer](https://github.com/nvim-tree/nvim-web-devicons)
   - [Icons](https://github.com/nvim-tree/nvim-tree.lua)
 - [Discord Presence](https://github.com/andweeb/presence.nvim)
