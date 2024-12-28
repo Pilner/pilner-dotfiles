@@ -15,7 +15,7 @@
     "coc-eslint": ">=1.6.0",
     "coc-prettier": ">=9.3.1",
     "coc-python": ">=1.2.13",
-    "@yaegassy/coc-tailwindcss3": ">=0.5.13",
+    "@yaegassy/coc-tailwindcss3": ">=0.5.14",
     "coc-cmake": ">=0.2.1",
     "coc-pairs": ">=1.4.2",
     "coc-tailwindcss": ">=0.7.0",
