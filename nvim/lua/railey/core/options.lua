@@ -5,9 +5,12 @@ opt.relativenumber = true
 opt.number = true
 
 -- tabs & indentation
-opt.tabstop = 4
-opt.shiftwidth = 4
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.softtabstop = 2
 opt.autoindent = true
+opt.expandtab = true -- Converts tabs to spaces
+opt.smartindent = true
 
 -- line wrapping
 opt.wrap = false
