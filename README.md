@@ -7,16 +7,14 @@ and to easily adjust remote workspaces
 
 *Note: Make sure you have this installed:*
 
-- [vim-plug](https://github.com/junegunn/vim-plug)
 - [NVIM](https://github.com/neovim/neovim/wiki/Installing-Neovim)
-- [NPM](https://www.npmjs.com/package/npm)
 
 *Note: This is based on a Linux Ubuntu System*
 
 1. Clone this repository to `~/.config` in a temp folder
 
 ```bash
-git clone https://github.com/Pilner/Nvim-Pilner -b directory-change ~/.config/temp
+git clone https://github.com/Pilner/Nvim-Pilner ~/.config/temp
 cd ~/.config/temp
 ```
 
@@ -26,19 +24,6 @@ cd ~/.config/temp
 mv ./* ~/.config/. && mv ./.git* ~/.config/.
 ```
 
-3. Install all dependencies of neovim plugins
-  - Open `plugins-setup.lua` using nvim
-```bash
-nvim ~/.config/nvim/lua/railey/plugins-setup.lua
-```
-  - And then run this command in normal mode
-```vim
-:PlugInstall
-```
+3. Open up `nvim` and wait for it to finish installing all the plugins
 
-4. Install all dependencies of COC extensions
-```bash
-cd ~/.config/coc/extensions && npm install
-```
-
-5. Now we're done! Enjoy!
+4. Now we're done! Enjoy!
