@@ -1,9 +1,3 @@
-# macOS packages via Homebrew
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/core"
-tap "homebrew/services"
-
 # Esssential
 brew "stow"
 brew "git"
