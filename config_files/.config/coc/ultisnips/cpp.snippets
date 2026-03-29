@@ -1,0 +1,74 @@
+# A valid snippet should starts with:
+#
+#		snippet trigger_word [ "description" [ options ] ]
+#
+# and end with:
+#
+#		endsnippet
+#
+# Snippet options:
+#
+#		b - Beginning of line.
+#		i - In-word expansion.
+#		w - Word boundary.
+#		r - Regular expression
+#		e - Custom context snippet
+#		A - Snippet will be triggered automatically, when condition matches.
+#
+# Basic example:
+#
+#		snippet emitter "emitter properties" b
+#		private readonly ${1} = new Emitter<$2>()
+#		public readonly ${1/^_(.*)/$1/}: Event<$2> = this.$1.event
+#		endsnippet
+#
+# Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+
+snippet cppcp "C++ Competitive Programming Boilerplate" b
+#include <bits/stdc++.h>
+using namespace std;
+
+#define GET_MACRO(_1,_2,_3,_4,_5,NAME,...) NAME
+#define FOR_MACRO(_1,_2,NAME,...) NAME
+
+#define GET5(a,b,c,d,e) cin>>a>>b>>c>>d>>e
+#define GET4(a,b,c,d) cin>>a>>b>>c>>d
+#define GET3(a,b,c) cin>>a>>b>>c
+#define GET2(a,b) cin>>a>>b
+#define GET1(a) cin>>a
+#define GET(...) GET_MACRO(__VA_ARGS__, GET5, GET4, GET3, GET2, GET1)(__VA_ARGS__)
+#define READ(a,n) FOR(i, n) cin >> a[i]
+#define VREAD(a,n) FOR(i, n) {int temp; cin >> temp; a.push_back(temp);}
+
+#define FOR2(i,n) for(ll i = 0; i < n; i++)
+#define FOR1(n) for(ll i = 0; i < n; i++)
+#define FOR(...) FOR_MACRO(__VA_ARGS__, FOR2, FOR1)(__VA_ARGS__)
+#define RFOR(i,n) for(ll i = n-1; i >= 0; i--)
+
+#define all(x) (x).begin(), (x).end()
+#define ll long long
+#define ld long double
+#define vt vector
+#define pb push_back
+
+void solve() {
+	ll ans = 0;
+	${1}
+
+	cout << ans << '\n';
+}
+
+int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
+
+	int t = 1;
+	GET(t);
+
+	while (t--) {
+		solve();
+	}
+
+	return 0;
+}
+endsnippet
