@@ -1,0 +1,22 @@
+# Fonts
+font-family = "Hack Nerd Font"
+font-size = 13
+
+# Window styling
+background-opacity = 0.98
+
+# Cursor
+cursor-style = block
+cursor-style-blink = false
+
+# Theme
+window-theme = dark
+theme = One Half Dark
+
+# Instance
+window-inherit-working-directory = false
+tab-inherit-working-directory = false
+split-inherit-working-directory = false
+window-inherit-font-size = false
+window-height = 28
+window-width = 96

@@ -13,3 +13,4 @@ brew "nvm"
 
 # Terminal
 cask "iterm2"
+cask "ghostty"

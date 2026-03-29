@@ -1,0 +1,16 @@
+# Essential packages for Ubuntu/Debian
+git
+curl
+wget
+fzf
+neovim
+zsh
+unzip
+
+# Development tools
+nodejs
+npm
+
+# Build essentials
+build-essential
+software-properties-common
