@@ -95,5 +95,7 @@ return {
 
 		-- Toggle Nvim-Tree
 		vim.keymap.set('n', "<leader>e", ":NvimTreeToggle<cr>")
+
+    vim.keymap.set('n', "<leader>tf", ":NvimTreeFindFile<cr>")
 	end
 }
