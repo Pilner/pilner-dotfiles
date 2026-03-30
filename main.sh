@@ -102,6 +102,7 @@ create_symlinks() {
     exit 1
   fi
 
+  log_info "Setting up config files..."
   stow -t "$HOME" -R config_files
 
   # Stow shell-specific package
