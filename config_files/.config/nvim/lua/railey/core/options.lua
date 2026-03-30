@@ -57,6 +57,9 @@ vim.g.copilot_enabled = "v:false"
 opt.timeoutlen = 1000
 opt.ttimeoutlen = 0
 
+-- Decrease update time for faster CursorHold (diagnostic hover)
+opt.updatetime = 250
+
 -- If WSL is being used
 if vim.fn.has("win32") == 1 then
 	vim.g.clipboard = {
