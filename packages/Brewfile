@@ -10,6 +10,8 @@ brew "fzf"
 
 # Development
 brew "nvm"
+brew "tree-sitter"
+brew "tree-sitter-cli"
 
 # Terminal
 cask "iterm2"

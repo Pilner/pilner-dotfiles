@@ -79,7 +79,8 @@ return {
 		desc = "LSP actions",
 		callback = function(event)
 			local opts = { buffer = event.buf }
-
+			local client = vim.lsp.get_client_by_id(event.data.client_id)
+			client.server_capabilities.semanticTokensProvider = nil
 			-- Jump to definition (Works across files)
 			vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
 
