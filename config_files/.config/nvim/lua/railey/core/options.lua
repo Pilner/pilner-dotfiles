@@ -31,6 +31,7 @@ opt.backspace = "indent,eol,start"
 opt.wrap = true
 opt.linebreak = true
 opt.list = false
+opt.breakindent = true
 
 -- word separators
 opt.iskeyword:remove({"-", "_"})

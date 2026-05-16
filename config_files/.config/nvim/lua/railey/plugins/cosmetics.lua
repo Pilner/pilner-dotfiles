@@ -1,22 +1,25 @@
 return {
-  {
-    "mong8se/actually.nvim",
-  },
-  {
-    "vim-airline/vim-airline",
-    priority = 1000,
-    dependencies = {
-      "vim-airline/vim-airline-themes",
-    },
-  },
-  {
-    "sonph/onehalf",
-    lazy = false,
-    priority = 1000,
-    config = function(plugin)
-	vim.opt.rtp:append(plugin.dir .. "/vim")
-	vim.cmd([[colorscheme onehalfdark]])
-	vim.g.airline_theme = "onehalfdark"
-    end,
-  },
+	{
+		"mong8se/actually.nvim",
+	},
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+		opts = {
+			options = {
+				theme = "edge",
+			},
+		},
+	},
+	{
+		"sainnhe/edge",
+		priority = 1000,
+		lazy = false,
+		config = function(plugin)
+			vim.opt.rtp:append(plugin.dir .. "/vim")
+			vim.cmd([[colorscheme edge]])
+		end,
+	},
 }
