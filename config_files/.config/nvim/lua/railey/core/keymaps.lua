@@ -46,7 +46,8 @@ keymap.set("n", "k", "gk", {noremap = true})
 keymap.set("n", "gj", "j", {noremap = true})
 keymap.set("n", "gk", "k", {noremap = true})
 
--- On-Screen Terminal
--- keymap.set("n", "<leader>t", ":10 split term://bash<CR>a")
--- keymap.set("t", "<Esc>", "<C-\\><C-n>")
--- keymap.set("t", "<C-K>", "<C-\\><C-n><C-W>k")
+-- Go to Implementation
+keymap.set('n', 'gi', vim.lsp.buf.implementation, { desc = "Go to Implementation" })
+
+-- Copy relative file path to neovim instance
+keymap.set('n', '<leader>cr', ':let @+ =expand("%:.")<CR>')

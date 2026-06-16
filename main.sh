@@ -27,6 +27,14 @@ detect_os() {
   fi
 }
 
+setup_macbook() {
+  log_info "Enhancing MacOS Experience..."
+  defaults write com.apple.dock autohide-delay -float 0; killall Dock
+  defaults write -g InitialKeyRepeat -int 20
+  defaults write -g KeyRepeat -int 2
+  defaults write -g ApplePressAndHoldEnabled -bool false
+}
+
 install_packages() {
   local os=$(detect_os)
 
@@ -113,6 +121,11 @@ create_symlinks() {
     log_info "Setting up zsh configuration..."
     stow -t "$HOME" -R zsh
   fi
+
+  mkdir -p ~/.config
+  if [[ ! -f ~/.config/.gitignore ]]; then
+    echo "*" > ~/.config/.gitignore
+  fi
 }
 
 setup_shell() {
@@ -188,6 +201,10 @@ main() {
   install_packages
   create_symlinks "$shell_choice"
   setup_shell "$shell_choice"
+
+  if [[ $(detect_os) == "macos" ]]; then
+    setup_macbook
+  fi
 
   echo -e "\n${GREEN}Installation complete! Please restart your terminal.${NC}"
 }
