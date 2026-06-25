@@ -15,7 +15,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  { import = "railey.plugins" }
+  { import = "railey.plugins.cosmetics" },
+	{ import = "railey.plugins.editing" },
+	{ import = "railey.plugins.utility" }
 })
 
 
