@@ -192,12 +192,91 @@ setup_shell() {
   fi
 }
 
+remove_symlinks() {
+  local shell_choice="${1:-zsh}" # Default to zsh
+
+  log_info "Removing symlinks with GNU Stow..."
+
+  # Navigate to the dynamic dotfiles directory
+  cd "$DOTFILES_DIR" || exit
+
+  # Make sure stow is actually installed before trying to run it
+  if ! command -v stow &> /dev/null; then
+    log_error "GNU Stow is not installed! Cannot remove symlinks."
+    exit 1
+  fi
+
+  log_info "Removing config files..."
+  stow -t "$HOME" -D config_files
+
+  # Unstow shell-specific package
+  if [[ "$shell_choice" == "bash" ]]; then
+    log_info "Removing bash configuration..."
+    stow -t "$HOME" -D bash
+  else
+    log_info "Removing zsh configuration..."
+    stow -t "$HOME" -D zsh
+  fi
+}
+
 # Main Function
 main() {
+  # Default values
+  local shell_choice="zsh"
+  local symlink_only=false
+  local remove_only=false
+
+  # Parse arguments
+  while [[ "$#" -gt 0 ]]; do
+    case $1 in
+      -s|--symlink-update)
+        symlink_only=true
+        ;;
+      -u|--unstow)
+        remove_only=true
+        ;;
+      bash)
+        shell_choice="bash"
+        ;;
+      zsh)
+        shell_choice="zsh"
+        ;;
+      -h|--help)
+        echo "Usage: ./main.sh [options] [shell]"
+        echo "Options:"
+        echo "  -s, --symlink-update   Only update GNU Stow symlinks"
+        echo "  -u, --unstow           Remove symlinks (run this before git pull)"
+        echo "  -h, --help             Show this help message"
+        echo "Shells:"
+        echo "  zsh (default), bash"
+        return 0
+        ;;
+      *)
+        log_warn "Unknown argument: $1. Ignoring."
+        ;;
+    esac
+    shift # Move to the next argument
+  done
+
   echo -e "${GREEN}Starting Pilner's dotfiles setup!${NC}\n"
 
-  local shell_choice="${1:-zsh}"
+  # Execute Unstow-Only path
+  if [[ "$remove_only" == true ]]; then
+    log_info "Running in unstow-only mode..."
+    remove_symlinks "$shell_choice"
+    echo -e "\n${GREEN}Symlinks removed successfully! You can now safely run git pull.${NC}"
+    return 0
+  fi
 
+  # Execute Symlink-Only path
+  if [[ "$symlink_only" == true ]]; then
+    log_info "Running in symlink-only mode..."
+    create_symlinks "$shell_choice"
+    echo -e "\n${GREEN}Symlinks updated successfully!${NC}"
+    return 0
+  fi
+
+  # Execute Standard path
   install_packages
   create_symlinks "$shell_choice"
   setup_shell "$shell_choice"
