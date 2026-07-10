@@ -97,6 +97,7 @@ install_packages() {
 }
 
 create_symlinks() {
+  local os=$(detect_os)
   local shell_choice="${1:-zsh}" # Default to zsh
 
   log_info "Creating symlinks with GNU Stow..."
@@ -125,6 +126,15 @@ create_symlinks() {
   mkdir -p ~/.config
   if [[ ! -f ~/.config/.gitignore ]]; then
     echo "*" > ~/.config/.gitignore
+  fi
+
+  if [[ "$os" == "macos" ]]; then
+    # Safely evaluate Homebrew shellenv for both Apple Silicon and Intel Macs
+    if [[ -x "/opt/homebrew/bin/brew" ]]; then
+      eval "$(/opt/homebrew/bin/brew shellenv)"
+    elif [[ -x "/usr/local/bin/brew" ]]; then
+      eval "$(/usr/local/bin/brew shellenv)"
+    fi
   fi
 }
 

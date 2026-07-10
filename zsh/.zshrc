@@ -4,6 +4,13 @@ ZSH_THEME="railey"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
+# Homebrew Environment
+if [[ -x "/opt/homebrew/bin/brew" ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [[ -x "/usr/local/bin/brew" ]]; then
+  eval "$(/usr/local/bin/brew shellenv)"
+fi
+
 # nvm (Lazy Loaded)
 export NVM_DIR="$HOME/.nvm"
 
