@@ -18,6 +18,9 @@ return {
         "bash",
         "markdown",
       },
+      noauto_install = {
+        "gitcommit"
+      }
     })
   end,
 }
