@@ -124,9 +124,6 @@ create_symlinks() {
   fi
 
   mkdir -p ~/.config
-  if [[ ! -f ~/.config/.gitignore ]]; then
-    echo "*" > ~/.config/.gitignore
-  fi
 
   if [[ "$os" == "macos" ]]; then
     # Safely evaluate Homebrew shellenv for both Apple Silicon and Intel Macs
