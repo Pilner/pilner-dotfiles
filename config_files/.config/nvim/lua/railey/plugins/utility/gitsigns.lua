@@ -21,6 +21,13 @@ return {
     attach_to_untracked = true,
     current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
     -- delay = 1000,
+
+    on_attach = function(bufnr)
+      local gitsigns = require('gitsigns')
+
+      -- Toggle current line blame
+      vim.keymap.set('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = "Toggle Git Blame" })
+    end,
   },
   config = function(_, opts)
     require("gitsigns").setup(opts)

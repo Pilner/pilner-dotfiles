@@ -46,8 +46,41 @@ keymap.set("n", "k", "gk", {noremap = true})
 keymap.set("n", "gj", "j", {noremap = true})
 keymap.set("n", "gk", "k", {noremap = true})
 
--- Go to Implementation
-keymap.set('n', 'gi', vim.lsp.buf.implementation, { desc = "Go to Implementation" })
-
 -- Copy relative file path to neovim instance
 keymap.set('n', '<leader>cr', ':let @+ =expand("%:.")<CR>')
+
+-- Keymap to run native git blame for the current line in a floating notification or command line
+vim.keymap.set('n', '<leader>gb', function()
+  local file = vim.fn.expand('%')
+  local line = vim.fn.line('.')
+  
+  if file ~= '' then
+    -- 1. Execute git blame and capture the output
+    local blame_cmd = string.format("git blame -w -L %d,+1 %s", line, vim.fn.shellescape(file))
+    local blame_output = vim.fn.system(blame_cmd)
+    
+    -- 2. Extract the commit SHA 
+    local commit_sha = string.match(blame_output, "^%^?(%w+)")
+    
+    -- 3. Ensure the line is committed (not a string of zeroes)
+    if commit_sha and not string.match(commit_sha, "^0+$") then
+      vim.notify("Searching for PR for commit " .. commit_sha .. "...", vim.log.levels.INFO)
+      
+      -- 4. Search GitHub for the PR associated with this commit
+      -- We use `gh pr list --search <SHA>` to find the PR, and `--jq` to extract just the PR number
+      local search_cmd = string.format("gh pr list --search %s --state all --json number --jq '.[0].number'", commit_sha)
+      local pr_number = vim.fn.system(search_cmd):gsub("%s+", "") -- strip whitespace/newlines
+      
+      -- 5. Open the PR if a valid number is returned
+      if pr_number ~= "" and pr_number ~= "null" then
+        local view_cmd = string.format("gh pr view %s --web", pr_number)
+        vim.fn.system(view_cmd)
+        vim.notify("Opened PR #" .. pr_number .. " in browser.", vim.log.levels.INFO)
+      else
+        vim.notify("No pull request found for commit: " .. commit_sha, vim.log.levels.WARN)
+      end
+    else
+      vim.notify("This line has uncommitted changes.", vim.log.levels.WARN)
+    end
+  end
+end, { desc = 'Native Git Blame Line to PR' })
