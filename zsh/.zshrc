@@ -2,6 +2,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="railey"
 plugins=(git)
+zstyle ':omz:alpha:lib:git' async-prompt no
 source $ZSH/oh-my-zsh.sh
 
 # Homebrew Environment

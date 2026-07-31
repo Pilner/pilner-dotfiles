@@ -163,6 +163,7 @@ setup_shell() {
       # Ensure the custom themes directory exists
       mkdir -p "$HOME/.oh-my-zsh/custom/themes"
 
+      # TODO: convert this into using stow
       # Copy all files from the zsh_themes directory to the OMZ custom themes folder
       # Using cp -a preserves permissions, and we suppress errors if the folder is empty
       cp -a "$DOTFILES_DIR/zsh_themes/"* "$HOME/.oh-my-zsh/custom/themes/" 2>/dev/null || log_warn "No themes found to copy."
