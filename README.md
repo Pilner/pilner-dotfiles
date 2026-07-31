@@ -42,7 +42,7 @@ The script will:
 
 - Install OS packages (Homebrew bundle on macOS, or `pacman` / `apt-get` on Linux)
 - Run **GNU Stow** on the `config_files` package and on either `zsh` or `bash`
-- On zsh: install **Oh My Zsh** if needed and copy themes from `zsh_themes/` into `~/.oh-my-zsh/custom/themes`
+- On zsh: install **Oh My Zsh** if needed and stow the `zsh_themes/` package into `~/.oh-my-zsh/custom/themes`
 
 3. **Restart your terminal** (or open a new session) so updated shell config and paths take effect.
 
@@ -100,5 +100,5 @@ Review anything under `~/` that was not created by Stow before deleting manual c
 ## Additional Notes
 
 - **GNU Stow** must be installed before `create_symlinks` runs; on macOS it is included via the Brewfile.
-- Custom Zsh themes live in `zsh_themes/` and are copied into `~/.oh-my-zsh/custom/themes` during setup.
+- Custom Zsh themes live in `zsh_themes/` and are stowed as symlinks into `~/.oh-my-zsh/custom/themes` during setup.
 - On macOS, **iTerm2** and other tools may be installed as casks—see `packages/Brewfile` for the full list.

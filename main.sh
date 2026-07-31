@@ -121,6 +121,19 @@ create_symlinks() {
   else
     log_info "Setting up zsh configuration..."
     stow -t "$HOME" -R zsh
+
+    # Handle the custom themes (runs whether OMZ was just installed or already existed)
+    if [[ -d "$DOTFILES_DIR/zsh_themes" ]]; then
+      log_info "Linking custom Zsh themes..."
+
+      # Ensure the custom themes directory exists before stowing into it
+      mkdir -p "$HOME/.oh-my-zsh/custom/themes"
+
+      # Stow the theme files as symlinks so repo changes apply immediately
+      stow -t "$HOME/.oh-my-zsh/custom/themes" -R zsh_themes
+    else
+      log_warn "Theme directory not found at $DOTFILES_DIR/zsh_themes. Skipping themes."
+    fi
   fi
 
   mkdir -p ~/.config
@@ -154,21 +167,6 @@ setup_shell() {
       log_info "Oh-My-Zsh installed successfully."
     else
       log_info "Oh-My-Zsh is already installed. Skipping base install."
-    fi
-
-    # Handle the custom themes (runs whether OMZ was just installed or already existed)
-    if [[ -d "$DOTFILES_DIR/zsh_themes" ]]; then
-      log_info "Copying custom Zsh themes..."
-
-      # Ensure the custom themes directory exists
-      mkdir -p "$HOME/.oh-my-zsh/custom/themes"
-
-      # TODO: convert this into using stow
-      # Copy all files from the zsh_themes directory to the OMZ custom themes folder
-      # Using cp -a preserves permissions, and we suppress errors if the folder is empty
-      cp -a "$DOTFILES_DIR/zsh_themes/"* "$HOME/.oh-my-zsh/custom/themes/" 2>/dev/null || log_warn "No themes found to copy."
-    else
-      log_warn "Theme directory not found at $DOTFILES_DIR/zsh_themes. Skipping themes."
     fi
 
     # Install Nerd Hack Font
@@ -224,6 +222,12 @@ remove_symlinks() {
   else
     log_info "Removing zsh configuration..."
     stow -t "$HOME" -D zsh
+  fi
+
+  # Unstow custom themes (guard against missing OMZ install on bare git pull)
+  if [[ -d "$HOME/.oh-my-zsh/custom/themes" ]]; then
+    log_info "Removing custom Zsh themes..."
+    stow -d "$DOTFILES_DIR" -t "$HOME/.oh-my-zsh/custom/themes" -D zsh_themes
   fi
 }
 
