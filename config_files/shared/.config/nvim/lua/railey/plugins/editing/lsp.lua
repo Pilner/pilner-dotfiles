@@ -27,14 +27,11 @@ return {
         local opts = { buffer = event.buf }
         local client = vim.lsp.get_client_by_id(event.data.client_id)
         client.server_capabilities.semanticTokensProvider = nil
-        -- Jump to definition (Works across files)
-        vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>", opts)
-
-        -- Other highly recommended LSP keymaps:
-        vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>", opts)
-        vim.keymap.set("n", "gi", function() require('telescope.builtin').lsp_implementations() end, { desc = "Go to Implementation" }, opts)
-        vim.keymap.set("n", "gt", "<cmd>lua vim.lsp.buf.type_definition()<cr>", { desc = "Go to Type Definition" }, opts)
-        vim.keymap.set("n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>", opts)
+        vim.keymap.set("n", "gd", function() Snacks.picker.lsp_definitions() end, { desc = "Go to Definition" }, opts)
+        vim.keymap.set("n", "gD", function() Snacks.picker.lsp_declarations() end, { desc = "Go to Declaration" }, opts)
+        vim.keymap.set("n", "gi", function() Snacks.picker.lsp_implementations() end, { desc = "Go to Implementation" }, opts)
+        vim.keymap.set("n", "gt", function() Snacks.picker.lsp_type_definitions() end, { desc = "Go to Type Definition" }, opts)
+        vim.keymap.set("n", "gr", function() Snacks.picker.lsp_references() end, { desc = "Go to References" }, opts)
         vim.keymap.set("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
         vim.keymap.set("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
         vim.keymap.set({ "n", "x" }, "<F3>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
