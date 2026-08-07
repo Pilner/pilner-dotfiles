@@ -106,10 +106,6 @@ create_symlinks() {
     stow -d "$CONFIG_STOW_DIR" -t "$HOME" -R "$pkg"
   done
 
-  # GNU Stow's built-in ignore list excludes .gitignore, so link it manually
-  # to mirror the repo copy into ~/.config.
-  ln -sfn "$CONFIG_STOW_DIR/shared/.config/.gitignore" "$HOME/.config/.gitignore"
-
   stow_shell "$shell_choice"
 }
 
@@ -129,12 +125,6 @@ remove_symlinks() {
     log_info "Removing $pkg configs..."
     stow -d "$CONFIG_STOW_DIR" -t "$HOME" -D "$pkg"
   done
-
-  # Remove the manually-linked .gitignore (only if it is a symlink we created)
-  if [[ -L "$HOME/.config/.gitignore" ]]; then
-    log_info "Removing ~/.config/.gitignore..."
-    rm "$HOME/.config/.gitignore"
-  fi
 
   unstow_shell "$shell_choice"
 }
