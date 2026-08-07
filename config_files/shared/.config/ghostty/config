@@ -21,3 +21,9 @@ window-inherit-font-size = false
 window-height = 40
 window-width = 120
 quit-after-last-window-closed = true
+
+# Alt/Option key configuration for Neovim
+macos-option-as-alt = true
+
+# Clear screen
+keybind = cmd+k=text:\x0c

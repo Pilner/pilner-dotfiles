@@ -5,3 +5,6 @@
 !/ghostty/
 /ghostty/**
 !/ghostty/**
+!/tmux/
+/tmux/**
+!/tmux/**
