@@ -27,15 +27,39 @@ return {
         local opts = { buffer = event.buf }
         local client = vim.lsp.get_client_by_id(event.data.client_id)
         client.server_capabilities.semanticTokensProvider = nil
-        vim.keymap.set("n", "gd", function() Snacks.picker.lsp_definitions() end, { desc = "Go to Definition" }, opts)
-        vim.keymap.set("n", "gD", function() Snacks.picker.lsp_declarations() end, { desc = "Go to Declaration" }, opts)
-        vim.keymap.set("n", "gi", function() Snacks.picker.lsp_implementations() end, { desc = "Go to Implementation" }, opts)
-        vim.keymap.set("n", "gt", function() Snacks.picker.lsp_type_definitions() end, { desc = "Go to Type Definition" }, opts)
-        vim.keymap.set("n", "gr", function() Snacks.picker.lsp_references() end, { desc = "Go to References" }, opts)
+        vim.keymap.set("n", "gd", function() require("snacks").picker.lsp_definitions() end, { desc = "Go to Definition" }, opts)
+        vim.keymap.set("n", "gD", function() require("snacks").picker.lsp_declarations() end, { desc = "Go to Declaration" }, opts)
+        vim.keymap.set("n", "gi", function() require("snacks").picker.lsp_implementations() end, { desc = "Go to Implementation" }, opts)
+        vim.keymap.set("n", "gt", function() require("snacks").picker.lsp_type_definitions() end, { desc = "Go to Type Definition" }, opts)
+        vim.keymap.set("n", "gr", function() require("snacks").picker.lsp_references() end, { desc = "Go to References" }, opts)
         vim.keymap.set("n", "gs", "<cmd>lua vim.lsp.buf.signature_help()<cr>", opts)
         vim.keymap.set("n", "<F2>", "<cmd>lua vim.lsp.buf.rename()<cr>", opts)
         vim.keymap.set({ "n", "x" }, "<F3>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
         vim.keymap.set("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<cr>", opts)
+
+        vim.keymap.set("n", "]d", function()
+          vim.diagnostic.goto_next()
+        end, { desc = "Jump to next diagnostic" }, opts)
+
+        vim.keymap.set("n", "[d", function()
+          vim.diagnostic.goto_prev()
+        end, { desc = "Jump to previous diagnostic" }, opts)
+
+        vim.keymap.set("n", "]e", function()
+          vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR })
+        end, { desc = "Jump to next error" }, opts)
+
+        vim.keymap.set("n", "[e", function()
+          vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR })
+        end, { desc = "Jump to previous error" }, opts)
+
+        vim.keymap.set("n", "]w", function()
+          vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.WARN })
+        end, { desc = "Jump to next warning" }, opts)
+
+        vim.keymap.set("n", "[w", function()
+          vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.WARN })
+        end, { desc = "Jump to previous warning" }, opts)
       end,
     })
 

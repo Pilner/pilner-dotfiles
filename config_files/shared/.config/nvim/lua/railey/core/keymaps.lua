@@ -7,7 +7,8 @@ keymap.set("n", "<Space>", "<NOP>", { noremap = true })
 
 -- Regarding Tabs
 keymap.set("n", "<leader>tn", ":tabnew<cr>")
--- keymap.set("n", "<leader>t<leader>", ":tabnext")
+keymap.set("n", 'th', ":tabprevious<cr>")
+keymap.set("n", 'tl', ":tabnext<cr>")
 keymap.set("n", "<leader>tm", ":tabmove")
 keymap.set("n", "<leader>tc", ":tabclose<cr>")
 keymap.set("n", "<leader>to", ":tabonly<cr>")
@@ -44,7 +45,7 @@ keymap.set("n", "gk", "k", { noremap = true })
 keymap.set("n", "<leader>cr", ':let @+ =expand("%:.")<CR>')
 
 -- Keymap to run native git blame for the current line in a floating notification or command line
-vim.keymap.set("n", "<leader>gB", function()
+keymap.set("n", "<leader>gB", function()
 	local file = vim.fn.expand("%")
 	local line = vim.fn.line(".")
 
@@ -80,6 +81,3 @@ vim.keymap.set("n", "<leader>gB", function()
 	end
 end, { desc = "Native Git Blame Line to PR" })
 
--- Buffer Next/Prev
-vim.keymap.set("n", "bh", ":bp<cr>")
-vim.keymap.set("n", "bl", ":bn<cr>")

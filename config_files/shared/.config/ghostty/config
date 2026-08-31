@@ -27,3 +27,5 @@ macos-option-as-alt = true
 
 # Clear screen
 keybind = cmd+k=text:\x0c
+
+window-new-tab-position = end

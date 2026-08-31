@@ -68,7 +68,7 @@ return {
 		{
 			"<leader>ff",
 			function()
-				Snacks.picker.smart()
+				Snacks.picker.smart({ cwd = vim.fn.getcwd() })
 			end,
 			desc = "Smart Find Files",
 		},
@@ -80,12 +80,12 @@ return {
 			desc = "[F]ind by [G]rep",
 		},
 		{
-			"<leader>fg",
+			"<leader>fw",
 			function()
 				Snacks.picker.grep_word()
 			end,
-			mode = "v",
-			desc = "[F]ind selected text by [G]rep",
+			mode = { "n", "v" },
+			desc = "[F]ind [W]ord",
 		},
 		{
 			"<leader>fb",
@@ -100,6 +100,13 @@ return {
 				Snacks.picker.help()
 			end,
 			desc = "[F]ind [H]elp",
+		},
+		{
+			"<leader>fr",
+			function()
+				Snacks.picker.lsp_references()
+			end,
+			desc = "[F]ind [R]eferences",
 		},
 		{
 			"<C-u>",
