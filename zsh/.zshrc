@@ -1,3 +1,6 @@
+# Profile (must be first)
+[ -f "$HOME/.config/dotfiles/profile.zsh" ] && source "$HOME/.config/dotfiles/profile.zsh"
+
 # oh-my-zsh
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="railey"

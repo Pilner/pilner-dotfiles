@@ -18,6 +18,8 @@ source "$SCRIPT_DIR/lib/macos.sh"
 source "$SCRIPT_DIR/lib/shell.sh"
 # shellcheck source=lib/stow.sh
 source "$SCRIPT_DIR/lib/stow.sh"
+# shellcheck source=lib/profile.sh
+source "$SCRIPT_DIR/lib/profile.sh"
 
 usage() {
   cat <<'EOF'
@@ -26,6 +28,7 @@ Usage: ./main.sh [options] [shell]
 Options:
   -s, --symlink-update   Only update GNU Stow symlinks
   -u, --unstow           Remove symlinks (run this before git pull)
+  -w, --work             Use work profile (default: personal)
   -h, --help             Show this help message
 
 Shells:
@@ -37,6 +40,7 @@ main() {
   local shell_choice="$DEFAULT_SHELL"
   local symlink_only=false
   local remove_only=false
+  local profile="personal"
 
   require_supported_os
 
@@ -48,6 +52,9 @@ main() {
         ;;
       -u|--unstow)
         remove_only=true
+        ;;
+      -w|--work)
+        profile="work"
         ;;
       bash|zsh)
         shell_choice="$1"
@@ -63,12 +70,17 @@ main() {
     shift
   done
 
+  if [[ "$profile" != "personal" && "$profile" != "work" ]]; then
+    die "Invalid profile: $profile (must be 'personal' or 'work')"
+  fi
+
   echo -e "${GREEN}Starting Pilner's dotfiles setup!${NC}\n"
 
   # Execute Unstow-Only path
   if [[ "$remove_only" == true ]]; then
     log_info "Running in unstow-only mode..."
     remove_symlinks "$shell_choice"
+    clear_active_profile
     echo -e "\n${GREEN}Symlinks removed successfully! You can now safely run git pull.${NC}"
     return 0
   fi
@@ -77,12 +89,14 @@ main() {
   if [[ "$symlink_only" == true ]]; then
     log_info "Running in symlink-only mode..."
     create_symlinks "$shell_choice"
+    set_active_profile "$profile"
     echo -e "\n${GREEN}Symlinks updated successfully!${NC}"
     return 0
   fi
 
   # Execute Standard path
   create_symlinks "$shell_choice"
+  set_active_profile "$profile"
   setup_shell "$shell_choice"
   setup_macos
 
