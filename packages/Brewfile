@@ -14,5 +14,4 @@ brew "tree-sitter"
 brew "tree-sitter-cli"
 
 # Terminal
-cask "iterm2"
 cask "ghostty"

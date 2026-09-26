@@ -30,17 +30,29 @@ chmod +x main.sh
 ./main.sh
 ```
 
-By default this uses **zsh**. To use **bash** instead:
+By default this uses **zsh** with the **personal** profile. To use **bash** instead:
 
 ```bash
 ./main.sh bash
 ```
+
+### Profiles (Personal vs Work)
+
+The installer supports two profiles via the `-w`/`--work` flag:
+
+| Profile | Command | vimtex (LaTeX) |
+|---------|---------|----------------|
+| Personal (default) | `./main.sh` | ✅ Loaded |
+| Work | `./main.sh -w` or `./main.sh --work` | ❌ Skipped |
+
+The profile controls which plugins load (e.g., `vimtex` only loads on `personal`). The active profile is stored in `~/.config/dotfiles/profile.zsh` and sourced by `.zshrc`.
 
 The script will:
 
 - Install Homebrew packages via `brew bundle`
 - Run **GNU Stow** on the `config_files/shared` and `config_files/macos` packages and on either `zsh` or `bash`
 - On zsh: install **Oh My Zsh** if needed and stow the `zsh_themes/` package into `~/.oh-my-zsh/custom/themes`
+- Write the active profile to `~/.config/dotfiles/profile.zsh`
 - Apply macOS system defaults (key repeat, dock autohide, etc.)
 
 3. **Restart your terminal** (or open a new session) so updated shell config and paths take effect.
@@ -50,8 +62,11 @@ The script will:
 You only need to run `./main.sh` when you want to (re)apply packages and symlinks after cloning or pulling changes. There is no long-running server.
 
 ```bash
-./main.sh        # zsh (default)
-./main.sh bash   # bash
+./main.sh              # zsh (default, personal profile)
+./main.sh -w           # zsh, work profile
+./main.sh --work       # zsh, work profile
+./main.sh bash         # bash (default, personal profile)
+./main.sh bash -w      # bash, work profile
 ```
 
 ## Stopping / reverting Stow links
@@ -108,5 +123,5 @@ Review anything under `~/` that was not created by Stow before deleting manual c
 - `~/.config` is created as a real directory in the setup phase; only repo-managed configs are symlinked into it as leaf links, so non-managed configs there are left untouched. GNU Stow's default ignore list skips `.gitignore`, so `~/.config/.gitignore` is linked manually by the script to mirror the repo copy.
 - Only `nvim/` and `ghostty/` are tracked in this repo; everything else under `config_files/` is local-only and git-ignored. `config_files/macos/` is kept in git as an empty placeholder (`.gitkeep`) for future macOS-specific configs; stow skips a package when its directory is missing from the repo, so setup won't fail on older clones.
 - Custom Zsh themes live in `zsh_themes/` and are stowed as symlinks into `~/.oh-my-zsh/custom/themes` during setup.
-- **iTerm2** and other tools may be installed as casks—see `packages/Brewfile` for the full list.
-- The installer is split into modules under `lib/` (`logging.sh`, `platform.sh`, `macos.sh`, `shell.sh`, `stow.sh`) sourced by `main.sh`. All macOS-specific logic (packages, font, defaults, `os_stow_packages`) lives in `lib/macos.sh`; `stow.sh` is OS-agnostic. Adding another OS later means adding a module like `lib/macos.sh` (with an `os_stow_packages()` function) and registering it in `main.sh`.
+- **Profile system**: The installer supports `personal` (default) and `work` profiles via `-w`/`--work`. The profile is stored in `~/.config/dotfiles/profile.zsh` (generated at install time) and sourced by `.zshrc`. Plugins like `vimtex` use this to conditionally load.
+- The installer is split into modules under `lib/` (`logging.sh`, `platform.sh`, `macos.sh`, `shell.sh`, `stow.sh`, `profile.sh`) sourced by `main.sh`. All macOS-specific logic (packages, font, defaults, `os_stow_packages`) lives in `lib/macos.sh`; `stow.sh` is OS-agnostic. Adding another OS later means adding a module like `lib/macos.sh` (with an `os_stow_packages()` function) and registering it in `main.sh`.
